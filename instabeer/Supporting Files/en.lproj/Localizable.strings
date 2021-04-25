@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  instabeer
+
+  Created by Julien Delferiere on 25/04/2021.
+  
+*/
+
+//MARK: - SignUp
+"SignUpTitle" = "Welcome to Newsome 👋";
+"SignUpSubtitle" = "Hello ! Guess you are new around here. You can start using the application after sign up.";
+"SignUpUsernamePlaceholder" = "Username";
+"SignUpEmailPlaceholder" = "Email Adress";
+"SignUpPasswordPlaceholder" = "Password";
+"SignUpRepeatPasswordPlaceholder" = "Repeat Password";
+"SignUpButton" = "Sign Up";
+"SignUpGoSignInButton" = "Already have an account? Sign in";
+
+//MARK: - SignIn
+"SigInTitle" = "Welcome Back 👋";
+"SigInSubtitle" = "I am happy to see you again. You can continue where you left off by logging in.";
+"SigInEmailPlaceholder" = "Email Adress";
+"SigInPasswordPlaceholder" = "Password";
+"SigInButton" = "Sign In";
+"SigInForgotPasswordButton" = "Forgot Password";
+"SigInWithGoogleButton" = "Sign in with Google";
+"SigInWithFacebookButton" = "Sign in with Facebook";
+"SigInOrLabel" = "Or";
+"SigInGoTuSignUpButton" = "Don't have an account? Sign Up";
