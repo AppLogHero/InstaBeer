@@ -11,14 +11,16 @@ import SwiftUI
 struct DIContainer: EnvironmentKey {
     
     let repositories: Repositories
+    let services: Services
     
-    init(repositories: Repositories) {
+    init(repositories: Repositories, services: Services) {
         self.repositories = repositories
+        self.services = services
     }
     
     static var defaultValue: Self { Self.default }
     
-    private static let `default` = Self(repositories: .mocked)
+    private static let `default` = Self(repositories: .mocked, services: .mocked)
     
 }
 
@@ -36,7 +38,7 @@ extension EnvironmentValues {
 #if DEBUG
 extension DIContainer {
     static var preview: Self {
-        .init(repositories: .mocked)
+        .init(repositories: .mocked, services: .mocked)
     }
 }
 #endif
@@ -44,8 +46,8 @@ extension DIContainer {
 // MARK: - Injection in the view hierarchy
 extension View {
     
-    func inject(_ repositories: DIContainer.Repositories) -> some View {
-        let container = DIContainer(repositories: repositories)
+    func inject(_ repositories: DIContainer.Repositories, _ services: DIContainer.Services) -> some View {
+        let container = DIContainer(repositories: repositories, services: services)
         return inject(container)
     }
     

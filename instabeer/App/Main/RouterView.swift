@@ -6,27 +6,32 @@
 //
 
 import SwiftUI
+import Combine
 
 struct RouterView: View {
     
     @EnvironmentObject var appEnvironment: AppEnvironment
-    @ObservedObject var session: SessionStore = SessionStore()
+    @Environment(\.injected) var container: DIContainer
+    @State var account: AccountModel?
+    private var cancellables = Set<AnyCancellable>()
     
     init() {
-        session.listen()
+        container.services.sessionStore.listen()
+        container.services.sessionStore.$session.sink { [self] (account) in
+            self.account = account
+        }
+        .store(in: &cancellables)
     }
     
     var body: some View {
-        Group {
-            if session.session != nil {
-                MainTabView()
-                    .environmentObject(session)
-                    .inject(appEnvironment.container)
-            } else {
-                SignInView(viewModel: SignInViewModel(session))
-                    .inject(appEnvironment.container)
-            }
+        if let account = account {
+            MainTabView()
+                .inject(appEnvironment.container)
+        } else {
+            SignInView(viewModel: SignInViewModel(container.services.sessionStore))
+                .inject(appEnvironment.container)
         }
+        
     }
 }
 

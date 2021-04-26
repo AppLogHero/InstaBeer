@@ -56,7 +56,7 @@ struct HomeView: View {
             .padding([.trailing, .leading], 16)
             ScrollView {
                 ForEach(posts, id: \.id) { post in
-                    PostCellView(userAsPosted: userAsPosted, post: PostModel(id: "", comment_ids: [], creation_date: .init(date: Date()), description: "", like_count: 0, photo_ids: [], type: .photo, user_id: ""))
+                    PostCellView(post: post)
                 }
             }
         }

@@ -20,7 +20,8 @@ extension AppEnvironment {
     
     static func bootstrap() -> AppEnvironment {
         let repositories = configuredRepositories()
-        let diContainer = DIContainer(repositories: repositories)
+        let services = configuredServices()
+        let diContainer = DIContainer(repositories: repositories, services: services)
         return AppEnvironment(container: diContainer)
     }
     
@@ -28,6 +29,11 @@ extension AppEnvironment {
         let firestore = Firestore.firestore()
         let postRepository = FireStorePostRepository(db: firestore)
         return .init(postRepository: postRepository)
+    }
+    
+    private static func configuredServices() -> DIContainer.Services {
+        let sessionStore = SessionStore()
+        return .init(sessionStore: sessionStore)
     }
     
 }

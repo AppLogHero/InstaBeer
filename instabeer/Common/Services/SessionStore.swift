@@ -10,12 +10,8 @@ import Combine
 
 class SessionStore: ObservableObject {
     
+    @Published var session: AccountModel?
     var didChange = PassthroughSubject<SessionStore, Never>()
-    var session: AccountModel? {
-        didSet {
-            self.didChange.send(self)
-        }
-    }
     var handle: AuthStateDidChangeListenerHandle?
     
     func listen () {

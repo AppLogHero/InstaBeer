@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PostCellView: View {
     
-    var userAsPosted: UserModel
     var post: PostModel
     
     var body: some View {
@@ -20,7 +19,7 @@ struct PostCellView: View {
                     .frame(width: 30, height: 30)
                     .scaledToFill()
                     .clipShape(Circle())
-                Text(userAsPosted.username)
+                Text(post.user_id)
                 Spacer()
                 ellipsis
                     .foregroundColor(secondary)
@@ -88,11 +87,9 @@ struct PostCellView: View {
 struct PostCellView_Previews: PreviewProvider {
 
     static var previews: some View {
-        let userAsPosted: UserModel = UserModel(username: "JeanJean", firstname: "Jean", lastname: "Michel", email: "michmich@gmail.com")
-        
         let post: PostModel = PostModel(id: "", comment_ids: [], creation_date: .init(date: Date()), description: "", like_count: 0, photo_ids: [], type: .photo, user_id: "")
         
-        PostCellView(userAsPosted: userAsPosted, post: post)
+        PostCellView(post: post)
             .environment(\.colorScheme, .light)
     }
 }
