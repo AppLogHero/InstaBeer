@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RouterView: View {
     
+    @EnvironmentObject var appEnvironment: AppEnvironment
     @ObservedObject var session: SessionStore = SessionStore()
     
     init() {
@@ -20,8 +21,10 @@ struct RouterView: View {
             if session.session != nil {
                 MainTabView()
                     .environmentObject(session)
+                    .inject(appEnvironment.container)
             } else {
                 SignInView(viewModel: SignInViewModel(session))
+                    .inject(appEnvironment.container)
             }
         }
     }

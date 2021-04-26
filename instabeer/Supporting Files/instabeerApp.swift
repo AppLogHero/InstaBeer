@@ -16,6 +16,7 @@ struct instabeerApp: App {
     var body: some Scene {
         WindowGroup {
             RouterView()
+                .environmentObject(AppEnvironment.bootstrap())
         }
     }
 }

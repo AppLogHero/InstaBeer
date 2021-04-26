@@ -9,6 +9,10 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @Environment(\.injected) var container: DIContainer
+    @ObservedObject var viewModel: HomeViewModel
+    @State var posts: [PostModel] = []
+    
     //Tempo
     let userAsPosted: UserModel = UserModel(username: "JeanJean", firstname: "Jean", lastname: "Michel", email: "michmich@gmail.com")
     
@@ -51,16 +55,22 @@ struct HomeView: View {
             }
             .padding([.trailing, .leading], 16)
             ScrollView {
-                ForEach([0...10], id: \.self) { post in
-                    PostCellView(userAsPosted: userAsPosted, post: PostModel(imageName: "defaultprofile", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in mattis velit. Nunc porttitor leo id neque vestibulum tincidunt. Phasellus vitae nisl at libero fringilla ullamcorper nec non leo. Fusce cursus, magna ut accumsan ultrices, dui lectus laoreet ligula, nec bibendum risus velit vitae lorem. Pellentesque varius, sapien nec viverra feugiat, augue odio vestibulum odio, et blandit ipsum massa non enim. Nam efficitur justo nibh, eu condimentum lectus molestie ut. Nam et ligula vitae ligula tincidunt dictum. Nulla ultricies accumsan sapien vitae lobortis."))
+                ForEach(posts, id: \.id) { post in
+                    PostCellView(userAsPosted: userAsPosted, post: PostModel(id: "", comment_ids: [], creation_date: .init(date: Date()), description: "", like_count: 0, photo_ids: [], type: .photo, user_id: ""))
                 }
             }
         }
+        .onAppear() {
+            self.viewModel.loadPost()
+        }
+        .onReceive(viewModel.$posts, perform: { posts in
+            self.posts = posts ?? []
+        })
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(viewModel: HomeViewModel(postRepository: MockedPostRepository()))
     }
 }

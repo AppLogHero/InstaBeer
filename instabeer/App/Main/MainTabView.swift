@@ -9,9 +9,11 @@ import SwiftUI
 
 struct MainTabView: View {
 
+    @Environment(\.injected) var container: DIContainer
+    
     var body: some View {
         TabView {
-            HomeView()
+            HomeView(viewModel: HomeViewModel(postRepository: container.repositories.postRepository))
                 .tabItem {
                     houseFill
                         .foregroundColor(secondary)

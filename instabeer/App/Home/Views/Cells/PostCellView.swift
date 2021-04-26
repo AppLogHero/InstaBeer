@@ -29,7 +29,7 @@ struct PostCellView: View {
             .padding([.top, .bottom], 8)
             VStack {
                 GeometryReader { geo in
-                    Image(post.imageName)
+                    defaultProfile
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: geo.size.width, height: screenHeight / 2)
@@ -90,7 +90,7 @@ struct PostCellView_Previews: PreviewProvider {
     static var previews: some View {
         let userAsPosted: UserModel = UserModel(username: "JeanJean", firstname: "Jean", lastname: "Michel", email: "michmich@gmail.com")
         
-        let post: PostModel = PostModel(imageName: "defaultprofile", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in mattis velit. Nunc porttitor leo id neque vestibulum tincidunt. Phasellus vitae nisl at libero fringilla ullamcorper nec non leo. Fusce cursus, magna ut accumsan ultrices, dui lectus laoreet ligula, nec bibendum risus velit vitae lorem. Pellentesque varius, sapien nec viverra feugiat, augue odio vestibulum odio, et blandit ipsum massa non enim. Nam efficitur justo nibh, eu condimentum lectus molestie ut. Nam et ligula vitae ligula tincidunt dictum. Nulla ultricies accumsan sapien vitae lobortis.")
+        let post: PostModel = PostModel(id: "", comment_ids: [], creation_date: .init(date: Date()), description: "", like_count: 0, photo_ids: [], type: .photo, user_id: "")
         
         PostCellView(userAsPosted: userAsPosted, post: post)
             .environment(\.colorScheme, .light)
