@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import UIKit
+import SwiftUI
+import Combine
 
 extension String {
     
@@ -16,3 +19,10 @@ extension String {
     }
     
 }
+
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+

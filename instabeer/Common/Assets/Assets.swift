@@ -26,6 +26,7 @@ let bag: Image = Image(systemName: "bag")
 let bagFill: Image = Image(systemName: "bag.fill")
 let profile: Image = Image(systemName: "person.crop.circle")
 let profileFill: Image = Image(systemName: "person.crop.circle.fill")
+let close: Image = Image(systemName: "xmark")
 
 //MARK: - XCAssets
 let defaultProfile: Image = Image("defaultprofile")
@@ -34,6 +35,7 @@ let account: Image = Image("account")
 let lock: Image = Image("lock")
 let facebook: Image = Image("facebook")
 let google: Image = Image("google")
+let emptyImage: Image = Image("empty-image")
 
 //MARK: - String values
 let emailStringValue = "email-pic"
@@ -41,4 +43,5 @@ let accountStringValue = "account"
 let lockStringValue = "lock"
 let facebookStringValue = "facebook"
 let googleStringValue = "google"
+let emptyImageString = "empty-image"
 

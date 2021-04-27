@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0833132638B6C000C78B10 /* AdaptsToSoftwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0833122638B6C000C78B10 /* AdaptsToSoftwareKeyboard.swift */; };
 		0A17DB3526374C2A0037FD37 /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A17DB3426374C2A0037FD37 /* PostRepository.swift */; };
 		0A17DB41263752920037FD37 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A17DB40263752920037FD37 /* DIContainer.swift */; };
 		0A17DB49263752BA0037FD37 /* ServicesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A17DB48263752BA0037FD37 /* ServicesContainer.swift */; };
 		0A17DB4E263752C80037FD37 /* RepositoriesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A17DB4D263752C80037FD37 /* RepositoriesContainer.swift */; };
 		0A17DB55263756FD0037FD37 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A17DB54263756FD0037FD37 /* AppEnvironment.swift */; };
 		0A17DB5B26375C4B0037FD37 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A17DB5A26375C4B0037FD37 /* HomeViewModel.swift */; };
+		0A4592F22638A5740084DE02 /* NewPostStepOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4592F12638A5740084DE02 /* NewPostStepOneView.swift */; };
+		0A61DFAE2638A8BC001B3549 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61DFAD2638A8BC001B3549 /* ImagePicker.swift */; };
 		0A7012C926345F8000BE0165 /* instabeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7012C826345F8000BE0165 /* instabeerApp.swift */; };
 		0A7012CD26345F8200BE0165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A7012CC26345F8200BE0165 /* Assets.xcassets */; };
 		0A7012D026345F8200BE0165 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A7012CF26345F8200BE0165 /* Preview Assets.xcassets */; };
@@ -72,12 +75,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A0833122638B6C000C78B10 /* AdaptsToSoftwareKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToSoftwareKeyboard.swift; sourceTree = "<group>"; };
 		0A17DB3426374C2A0037FD37 /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
 		0A17DB40263752920037FD37 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		0A17DB48263752BA0037FD37 /* ServicesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesContainer.swift; sourceTree = "<group>"; };
 		0A17DB4D263752C80037FD37 /* RepositoriesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesContainer.swift; sourceTree = "<group>"; };
 		0A17DB54263756FD0037FD37 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		0A17DB5A26375C4B0037FD37 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		0A4592F12638A5740084DE02 /* NewPostStepOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostStepOneView.swift; sourceTree = "<group>"; };
+		0A61DFAD2638A8BC001B3549 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0A7012C526345F8000BE0165 /* instabeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instabeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A7012C826345F8000BE0165 /* instabeerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instabeerApp.swift; sourceTree = "<group>"; };
 		0A7012CC26345F8200BE0165 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -176,6 +182,31 @@
 				0A17DB5A26375C4B0037FD37 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0A4592E82638A5130084DE02 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				0A4592E92638A51E0084DE02 /* Views */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		0A4592E92638A51E0084DE02 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A4592ED2638A5250084DE02 /* Subviews */,
+				0A4592F12638A5740084DE02 /* NewPostStepOneView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0A4592ED2638A5250084DE02 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				0A61DFAD2638A8BC001B3549 /* ImagePicker.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		0A7012BC26345F8000BE0165 = {
@@ -284,6 +315,7 @@
 		0A70131F2635A68A00BE0165 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				0A4592E82638A5130084DE02 /* Post */,
 				0A7013742635C09B00BE0165 /* Auth */,
 				0A70133F2635BA1E00BE0165 /* Main */,
 				0A7013522635BDEE00BE0165 /* Profile */,
@@ -439,6 +471,7 @@
 				0A7013A92635C38B00BE0165 /* BigButtonBordered.swift */,
 				0A7013AA2635C38B00BE0165 /* RoundedTextField.swift */,
 				0A7013D7263604BB00BE0165 /* GenericPlaceholder.swift */,
+				0A0833122638B6C000C78B10 /* AdaptsToSoftwareKeyboard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -611,6 +644,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A7013582635BE1600BE0165 /* SearchView.swift in Sources */,
+				0A0833132638B6C000C78B10 /* AdaptsToSoftwareKeyboard.swift in Sources */,
 				0A17DB5B26375C4B0037FD37 /* HomeViewModel.swift in Sources */,
 				0A70138E2635C1F300BE0165 /* SignUpView.swift in Sources */,
 				0A7013D8263604BB00BE0165 /* GenericPlaceholder.swift in Sources */,
@@ -630,6 +664,8 @@
 				0A7013AB2635C38B00BE0165 /* BigButton.swift in Sources */,
 				0A70132D2635AA6800BE0165 /* UserModel.swift in Sources */,
 				0A7013212635A73500BE0165 /* PostCellView.swift in Sources */,
+				0A61DFAE2638A8BC001B3549 /* ImagePicker.swift in Sources */,
+				0A4592F22638A5740084DE02 /* NewPostStepOneView.swift in Sources */,
 				0A7013652635BE2C00BE0165 /* MarketView.swift in Sources */,
 				0A17DB3526374C2A0037FD37 /* PostRepository.swift in Sources */,
 				0A70133A2635B7CA00BE0165 /* Constants.swift in Sources */,

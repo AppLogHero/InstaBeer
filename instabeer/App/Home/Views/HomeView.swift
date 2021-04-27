@@ -12,6 +12,7 @@ struct HomeView: View {
     @Environment(\.injected) var container: DIContainer
     @ObservedObject var viewModel: HomeViewModel
     @State var posts: [PostModel] = []
+    @State var addPostViewIsShow: Bool = false
     
     //Tempo
     let userAsPosted: UserModel = UserModel(username: "JeanJean", firstname: "Jean", lastname: "Michel", email: "michmich@gmail.com")
@@ -24,7 +25,7 @@ struct HomeView: View {
                     .fontWeight(.heavy)
                 Spacer()
                 Button(action: {
-                    print("")
+                    self.addPostViewIsShow.toggle()
                 }, label: {
                     plusSquare
                         .resizable()
@@ -60,6 +61,9 @@ struct HomeView: View {
                 }
             }
         }
+        .fullScreenCover(isPresented: $addPostViewIsShow, content: {
+            NewPostStepOneView()
+        })
         .onAppear() {
             self.viewModel.loadPost()
         }
